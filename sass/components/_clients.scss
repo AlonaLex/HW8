@@ -1,0 +1,44 @@
+.clients {
+  @include section(60px, 60px);
+
+  @media screen and (min-width: 1200px) {
+    @include section;
+  }
+}
+
+.clients__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.clients__item {
+  width: calc((100% - 30px) / 2);
+
+  @media screen and (min-width: 768px) {
+    width: calc((100% - 2 * 30px) / 3);
+  }
+
+  @media screen and (min-width: 1200px) {
+    width: calc((100% - 5 * 30px) / 6);
+  }
+}
+
+.clients__link {
+  display: flex;
+  height: 92px;
+  justify-content: center;
+  align-items: center;
+
+  border: 1px solid var(--links-primary-color);
+  border-radius: var(--border-radius);
+  fill: var(--links-primary-color);
+
+  transition: fill var(--transition-effect);
+
+  &:hover,
+  &:focus {
+    border: 1px solid var(--accent-color);
+    fill: var(--accent-color);
+  }
+}

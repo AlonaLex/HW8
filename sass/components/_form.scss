@@ -1,0 +1,118 @@
+.form__field {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.01em;
+
+  transition: fill var(--transition-effect);
+
+  & ::placeholder {
+    color: rgba(117, 117, 117, 0.5);
+  }
+}
+
+.form__field input {
+  width: 100%;
+  margin-top: 4px;
+  padding: 12px 42px;
+
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: var(--border-radius);
+
+  transition: border var(--transition-effect), outline var(--transition-effect);
+}
+
+.form__icon {
+  position: absolute;
+
+  bottom: 11px;
+  left: 12px;
+
+  fill: var(--title-text-color);
+}
+
+.form__comment {
+  margin-bottom: 20px;
+}
+
+.form__field:focus-within .form__icon {
+  fill: var(--accent-color);
+}
+
+.form__field:focus-within input,
+.form__field:focus-within textarea {
+  border: 1px solid var(--accent-color);
+  outline: none;
+}
+
+.form textarea {
+  width: 100%;
+  height: 120px;
+  padding: 12px 16px;
+  margin-top: 4px;
+
+  resize: none;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: var(--border-radius);
+}
+
+.form__newsletter {
+  position: relative;
+  padding-left: 24px;
+
+  font-size: 12px;
+  line-height: 1.17;
+
+  @media screen and (min-width: 1200px) {
+    font-size: 14px;
+    line-height: 1.71;
+    padding-left: 35px;
+  }
+}
+
+.form__link {
+  color: var(--accent-color);
+}
+
+.checkbox {
+  --webkit-appearance: none;
+  --moz-appearance: none;
+  appearance: none;
+
+  position: absolute;
+
+  &:checked + .checkbox__icon {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    background-image: url(../images/check.svg);
+    background-size: contain;
+    background-origin: border-box;
+
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  }
+}
+
+.checkbox__icon {
+  position: absolute;
+  top: 1px;
+  left: 0px;
+
+  display: inline-block;
+  width: 16px;
+  height: 15px;
+  margin-right: 7px;
+
+  vertical-align: middle;
+
+  border: 2px solid var(--title-text-color);
+  border-radius: 2px;
+
+  @media screen and (min-width: 1200px) {
+    left: 12px;
+  }
+}
